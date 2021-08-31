@@ -60,8 +60,8 @@
           // lymph = byCodes('26478-8');
           // Cerner SoF Tutorial Observations
            var height = byCodes('2823-3');
-           var systolicbp = getBloodPressureValue(byCodes('2823-3'),'8480-6');
-           var diastolicbp = getBloodPressureValue(byCodes('2823-3'),'8462-4');
+           // var systolicbp = getBloodPressureValue(byCodes('2823-3'),'8480-6');
+           // var diastolicbp = getBloodPressureValue(byCodes('2823-3'),'8462-4');
            var hdl = byCodes('22823-3');
            var ldl = byCodes('2823-3');
 
