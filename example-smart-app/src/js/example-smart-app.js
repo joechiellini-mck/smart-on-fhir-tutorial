@@ -16,9 +16,11 @@
            type: 'Observation',
            query: {
              code: {
-               $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
-                     'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
-                     'http://loinc.org|2089-1', 'http://loinc.org|55284-4']
+               $or: [
+                 'http://loinc.org|2823-3',
+                 'http://loinc.org|785-6',
+                 'http://loinc.org|6298-4',
+               ]
              }
            }
          });
@@ -41,8 +43,8 @@
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           console.log("byCodes:");
-          console.log(byCodes('8480-6'));
-          console.log(byCodes('8462-4'));
+          console.log(byCodes('2823-3'));
+          console.log(byCodes('785-6'));
 
           var gender = patient.gender;
 
@@ -57,11 +59,11 @@
           // Observations
           // lymph = byCodes('26478-8');
           // Cerner SoF Tutorial Observations
-           var height = byCodes('8302-2');
-           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
-           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
-           var hdl = byCodes('2085-9');
-           var ldl = byCodes('2089-1');
+           var height = byCodes('2823-3');
+           var systolicbp = getBloodPressureValue(byCodes('2823-3'),'8480-6');
+           var diastolicbp = getBloodPressureValue(byCodes('2823-3'),'8462-4');
+           var hdl = byCodes('22823-3');
+           var ldl = byCodes('2823-3');
 
 
           var p = defaultPatient();
@@ -156,7 +158,7 @@
     $('#gender').html(p.gender);
     $('#birthdate').html(p.birthdate);
     //$('#lymph').html(p.lymph);
-    
+
     // Cerner SoF Tutorial Observations
 
     $('#height').html(p.height);
